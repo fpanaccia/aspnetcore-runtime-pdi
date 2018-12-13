@@ -1,10 +1,4 @@
-FROM microsoft/dotnet:2.2-aspnetcore-runtime AS base
-WORKDIR /app
-RUN echo America/Argentina/Buenos_Aires >/etc/timezone && \
-ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime && \
-dpkg-reconfigure -f noninteractive tzdata
-EXPOSE 80
-
+FROM microsoft/dotnet:2.1-aspnetcore-runtime
 RUN apt-get update && \
     mkdir /usr/share/man/man1 && \
     apt-get -y install --no-install-recommends openjdk-8-jre-headless && \
