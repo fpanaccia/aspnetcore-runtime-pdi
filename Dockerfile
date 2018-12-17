@@ -37,4 +37,4 @@ RUN /usr/bin/wget \
 ENV KETTLE_HOME=$PENTAHO_HOME/data-integration \
     PATH=$KETTLE_HOME:$PATH
 
-USER TOOT
+USER ROOT
