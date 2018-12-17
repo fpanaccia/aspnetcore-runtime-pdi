@@ -36,3 +36,5 @@ RUN /usr/bin/wget \
 # as the path gets eveluated - so it must already exist
 ENV KETTLE_HOME=$PENTAHO_HOME/data-integration \
     PATH=$KETTLE_HOME:$PATH
+
+USER TOOT
