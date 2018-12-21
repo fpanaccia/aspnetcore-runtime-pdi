@@ -9,8 +9,8 @@ RUN apt-get update && \
 	apt-get purge -y --auto-remove
 
 # Set required environment vars
-ENV PDI_RELEASE=6.0 \
-    PDI_VERSION=6.0.1.0-386 \
+ENV PDI_RELEASE=8.2 \
+    PDI_VERSION=8.2.0.0-342 \
     CARTE_PORT=8181 \
     PENTAHO_JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 \
     PENTAHO_HOME=/home/pentaho
@@ -27,7 +27,7 @@ USER pentaho
 # Download PDI
 RUN /usr/bin/wget \
     --progress=dot:giga \
-    http://downloads.sourceforge.net/project/pentaho/Data%20Integration/${PDI_RELEASE}/pdi-ce-${PDI_VERSION}.zip \
+    http://downloads.sourceforge.net/project/pentaho/Pentaho%20${PDI_RELEASE}/client-tools/pdi-ce-${PDI_VERSION}.zip \
     -O /tmp/pdi-ce-${PDI_VERSION}.zip && \
     /usr/bin/unzip -q /tmp/pdi-ce-${PDI_VERSION}.zip -d  $PENTAHO_HOME && \
     rm /tmp/pdi-ce-${PDI_VERSION}.zip	
