@@ -37,4 +37,9 @@ RUN /usr/bin/wget \
 ENV KETTLE_HOME=$PENTAHO_HOME/data-integration \
     PATH=$KETTLE_HOME:$PATH
 
+# Create kettle.properties file
+RUN mkdir -p $KETTLE_HOME/.kettle
+WORKDIR $KETTLE_HOME/.kettle
+RUN	printf 'KETTLE_EMPTY_STRING_DIFFERS_FROM_NULL=Y' >> kettle.properties
+
 USER root
